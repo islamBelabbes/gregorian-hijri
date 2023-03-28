@@ -2,7 +2,7 @@ const date_convert = () => {
   // form valid //
   // Get references to the day and month dropdowns
   var dayDropdown = document.getElementById("gen-dd");
-  // var monthDropdown = document.getElementById("gen-mm");
+  var monthDropdown = document.getElementById("gen-mm");
   // Add a change event listener to the month dropdown
   monthDropdown.addEventListener("change", function () {
     // Get the selected month value
