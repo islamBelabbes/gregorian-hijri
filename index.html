@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- google -->
+    <!-- 1- Load the moment-with-locales -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <script src="https://raw.githubusercontent.com/xsoh/moment-hijri/master/moment-hijri.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/number-to-arabic-words@latest/dist/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;500&family=Lora:wght@400;500&family=Nunito+Sans:wght@200;400&family=Poppins:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- f4 -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css"
+    />
+    <link
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      rel="stylesheet"
+    />
+
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  </head>
+  <body>
+    <!-- here -->
+    <!-- main -->
+    <div class="container">
+      <div dir="rtl" class="date-converter-section">
+        <div class="date-converter-tabs">
+          <ul>
+            <li class="tab tabSelected" data-content-tab="hij">
+              <a href="#">ميلادي لهجري</a>
+            </li>
+            <li class="tab" data-content-tab="gen">
+              <a href="#">هجري لميلادي</a>
+            </li>
+          </ul>
+        </div>
+        <div class="hijtogen" style="display: none" data-content-div="gen">
+          <div class="title">
+            <h1>تحويل التاريخ من هجري الى ميلادي</h1>
+          </div>
+          <form id="hij-form">
+            <h1>أدخل التاريخ الهجري</h1>
+            <div class="date-select">
+              <select name="hij-dd" id="hij-dd" required>
+                <option value="" disabled selected hidden>اليوم</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+              <select name="hij-mm" id="hij-mm" required>
+                <option value="" disabled selected hidden>الشهر</option>
+                <option value="01">01 - مُحَرَّم</option>
+                <option value="02">02 - صَفَر</option>
+                <option value="03">03 - ربيع الأول</option>
+                <option value="04">04 - ربيع الآخر</option>
+                <option value="05">05 - جُمادى الأولى</option>
+                <option value="06">06 - جُمادى الآخرة</option>
+                <option value="07">07 - رجب</option>
+                <option value="08">08 - شعبان</option>
+                <option value="09">09 - رمضان</option>
+                <option value="10">10 - شوال</option>
+                <option value="11">11 - ذو القعدة</option>
+                <option value="12">12 - ذو الحجة</option>
+              </select>
+              <input
+                required
+                type="text"
+                name="hij-yy"
+                id="hij-yy"
+                placeholder="السنة"
+              />
+            </div>
+            <button class="date-convert-submit" type="submit">
+              <strong> تحويل </strong>
+              <i class="fas fa-spinner fa-spin" style="display: none"></i>
+            </button>
+          </form>
+        </div>
+        <div class="gentohij" data-content-div="hij">
+          <div class="title">
+            <h1>تحويل التاريخ من ميلادي الى هجري</h1>
+          </div>
+          <form id="gen-form">
+            <h1>أدخل التاريخ الميلادي</h1>
+            <div class="date-select">
+              <select name="gen-dd" id="gen-dd" required>
+                <option value="" disabled selected hidden>اليوم</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+              </select>
+              <select name="gen-mm" id="gen-mm" required>
+                <option value="" disabled selected hidden>الشهر</option>
+                <option value="01">01 - كانون الثاني</option>
+                <option value="02">02 - شباط</option>
+                <option value="03">03 - آذار</option>
+                <option value="04">04 - نيسان</option>
+                <option value="05">05 - أيار</option>
+                <option value="06">06 - حزيران</option>
+                <option value="07">07 - تموز</option>
+                <option value="08">08 - آب</option>
+                <option value="09">09 - أيلول</option>
+                <option value="10">10 - تشرين الأول</option>
+                <option value="11">11 - تشرين الثاني</option>
+                <option value="12">12 - كانون الأول</option>
+              </select>
+              <input
+                required
+                type="text"
+                name="gen-yy"
+                id="gen-yy"
+                placeholder="السنة"
+              />
+            </div>
+            <button class="date-convert-submit" type="submit">
+              <strong> تحويل </strong>
+              <i class="fas fa-spinner fa-spin" style="display: none"></i>
+            </button>
+          </form>
+        </div>
+        <template data-result>
+          <div class="result">
+            <h1 id="submitted-date">التاريخ المدخل</h1>
+            <h1 id="submitted-date" data-current>2002-03-02</h1>
+            <div class="final-result">
+              <h1>يوافق هجري بأشكال وصيغ متعددة</h1>
+              <h1 data-final-date>1422-12-17</h1>
+              <h1 data-final-date-full data-tran>17 ذو الحجة 1422</h1>
+              <h1 data-final-date-text data-tran>text</h1>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+    <!-- main -->
+    <!-- here -->
+    <footer>
+      <script src="translate.js"></script>
+      <script src="js.js"></script>
+    </footer>
+  </body>
+</html>

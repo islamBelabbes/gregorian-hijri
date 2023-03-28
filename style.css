@@ -1,0 +1,218 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: aliceblue;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+.date-converter-section {
+  width: 756px;
+  min-height: 360px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 15px;
+  background-color: #ffff;
+  padding: 25px;
+}
+ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.212);
+  background: #fff;
+  list-style-type: none;
+  padding: 12px 12px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.tab {
+  width: 40%;
+  float: left;
+  height: 44px;
+  margin: 0 8px -1px 0;
+  border: 1px solid #dae0e7;
+  background: #f9f9f9;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tab,
+.tab a {
+  transition: all 0.25s;
+}
+
+.tab:hover {
+  background: #fff;
+}
+.tabSelected {
+  height: 45px;
+  border-bottom: none;
+  background: #fff;
+}
+.hijtogen,
+.gentohij {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hijtogen .title,
+.gentohij .title {
+  width: 100%;
+  text-align: center;
+}
+.hijtogen .title h1,
+.gentohij .title h1 {
+  font-size: 1.5rem;
+  padding: 18px;
+  border-bottom: 1px solid #dae0e7;
+}
+#hij-form,
+#gen-form {
+  padding: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#hij-form h1,
+#gen-form h1 {
+  font-size: 1.3rem;
+}
+.date-select {
+  padding: 18px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.date-select select {
+  padding: 15px;
+  border: 3px solid aqua;
+}
+#hij-mm,
+#gen-mm {
+  width: 150px;
+}
+#hij-yy,
+#gen-yy {
+  padding: 15px;
+  width: 80px;
+  border: 3px solid aqua;
+}
+.date-converter-section input::placeholder {
+  text-align: center;
+}
+.date-converter-section input:focus {
+  text-align: center;
+  outline: none;
+}
+
+/* CSS */
+.date-convert-submit {
+  background-color: #ffffff;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
+    transform 0.1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+}
+
+.date-convert-submit:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow 0.2s;
+}
+
+.date-convert-submit:active {
+  background-color: #f7f7f7;
+  border-color: #000000;
+  transform: scale(0.96);
+}
+
+.date-convert-submit:disabled {
+  border-color: #dddddd;
+  color: #dddddd;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.result h1 {
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.result > #submitted-date {
+  padding: 20px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.212);
+}
+.result > #submitted-date:nth-of-type(1) {
+  border-top: 3px solid rgba(128, 128, 128, 0.212);
+}
+.final-result {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.final-result h1:nth-of-type(1) {
+  font-size: 1.1rem;
+}
+h1[data-final-date] {
+  font-size: 2.9rem;
+  color: #298350;
+}
+h1[data-final-date-full],
+h1[data-final-date-text] {
+  color: #298350;
+}
+@media (width < 900px) {
+  .container {
+    height: 100%;
+    margin-top: 100px;
+  }
+  .date-converter-section {
+    width: 95%;
+    margin: 30px;
+  }
+}
